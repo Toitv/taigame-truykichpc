@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title></title>
+    <style type="text/css">
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;vertical-align:middle;line-height:normal;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;list-style-type:none;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+        a {text-decoration: none;}
+        ol, ul {list-style: none;}
+        blockquote, q {quotes: none;}
+        blockquote:before, blockquote:after, q:before, q:after {content: none;}
+        table {border-collapse: collapse;border-spacing: 0;}
+        @font-face{src:url("fonts/AgencyFBB.ttf");font-family: 'AgencyFBB';}
+        body{background-image: url(images/bg_w.jpg);background-repeat: no-repeat;background-position: top center;}
+        .ls_logo_top{z-index: 3;display: flex;align-items: center;padding: 0px 50px;width: 100%;margin-top: 50px;position: relative;}
+        .ls_logo_top li{margin-right: 35px;}
+        .ls_logo_top li:first-child{margin-right: auto;}
+        .ls_logo_top li:last-child{margin-right: 0;}
+        .ndung_taigame{width: 100%;height: 100%;}
+        .wrapper{width: 1200px;position: relative;left: 50%;margin-left: -600px;height: 85vh;}
+        .all_texchinhtg{position: absolute;left: 0;top:50%;transform: translateY(-50%);-moz-transform: translateY(-50%);-webkit-transform: translateY(-50%);z-index: 5;}
+        .tx_toallchinh{display: block;text-align: center;}
+        .btn_tagmeud{font-family:'AgencyFBB';text-transform:uppercase;color:#fff;font-size:58px;background-color:#ff0040;position:relative;margin:0 auto;width:345px;padding:15px 0px;box-sizing:border-box;display:block;text-align:center;margin-top:50px;-webkit-animation-name:tada;animation-name:tada;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-duration:1.5s;animation-duration:1.5s;}
+        @-webkit-keyframes tada{
+            from{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1);}
+            10%,20%{-webkit-transform:scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg);transform:scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg);}
+            30%,50%,70%,90%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg);transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg);}
+            40%,60%,80%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg);transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg);}
+            to{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1);}
+        }
+        @keyframes tada{
+            from{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1);}
+            10%,20%{-webkit-transform:scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg);transform:scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg);}
+            30%,50%,70%,90%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg);transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg);}
+            40%,60%,80%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg);transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg);}
+            to{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1);}
+        }
+        .btn_tagmeud:before{content:"";position: absolute;top:-25px;left:-28px;width: 74px;height: 60px;background: url(images/icon_gac.png) no-repeat;}
+        .btn_tagmeud:after{content:"";position: absolute;bottom:-25px;right:-28px;width: 74px;height: 60px;background: url(images/icon_gac.png) no-repeat;transform: scale(-1);}
+        .btn_tagmeud:hover{-webkit-animation-name:sacee;animation-name:sacee;-webkit-animation-duration:0.3s;animation-duration:0.3s;-webkit-animation-timing-function:linear;animation-timing-function:linear;}
+        @-webkit-keyframes sacee{
+            50%{-webkit-transform:scale(0.95);transform:scale(0.95);}
+            100%{-webkit-transform:scale(1);transform:scale(1);}
+        }
+        @keyframes sacee{
+            50%{-webkit-transform:scale(0.95);transform:scale(0.95);}
+            100%{-webkit-transform:scale(1);transform:scale(1);}
+        }
+        .texall_gco{position: absolute;bottom: 30px;left: 0;color:#fff;font-family: 'AgencyFBB';font-size: 30px;display: flex;align-items: baseline;letter-spacing: 0.5px;z-index: 3;}
+        .texall_gco em{display: inline-block;text-transform: uppercase;font-style: normal;margin: 0px 5px;text-shadow: 0px 0px 10px #ff0000, 0px 0px 10px #ff0000, 0px 0px 10px #ff0000, 0px 0px 10px #ff0000, 0px 0px 10px #ff0000, 0px 0px 10px #ff0000, 0px 0px 10px #ff0000, 0px 0px 10px #ff0000, 0px 0px 10px #ff0000;}
+        footer{background-color:#222529;padding:20px 0px;}
+        footer .wrapper1{display:flex;align-items:center;justify-content:center;flex-direction:column;padding: 0px 15px;}
+        .all_logofoter{display:flex;align-items:center;margin-bottom:20px;}
+        .all_logofoter a{margin:0px 10px;}
+        .txt_allfooter{text-align:center;color:#fff;line-height:1.5;font-size:16px;font-family: 'Roboto', sans-serif;}
+        .menu_foter_ud{display:flex;align-items:center;justify-content:center;margin:15px auto;}
+        .menu_foter_ud li{margin:0px 10px;}
+        .menu_foter_ud li a{background-color:#42464b;color:#fff;font-size:14px;padding:5px 15px;text-transform:uppercase;border-radius:5px;font-family: 'Roboto', sans-serif;}
+        .menu_foter_ud li a:hover{background-color:#151925;}
+        @media (max-width:1024px){
+            .wrapper{width: 100%;left: 0;margin-left: 0;}
+            .ls_logo_top{margin-top:20px;}
+            body{background-image:url(images/bg_mb.jpg);background-color:#000;background-size: cover;}
+            .all_texchinhtg{position: static;transform: none;text-align: center;margin-bottom: 150px;}
+            .tx_toallchinh{width: 100%;margin-top: 250px;padding: 0px 25px;}
+            .tx_toallchinh img{max-width: 100%;margin: 0 auto;display: block;}
+            .btn_tagmeud{width: 300px;height: 85px;font-size: 45px;padding: 10px 0px;}
+            .texall_gco{left: auto;justify-content: center;width: 100%;font-size: 25px;}
+        }
+        @media (max-width:991px){
+            .texall_gco{font-size: 23px;}
+            .txt_allfooter{font-size: 14px;}
+            body{background-size: contain;}
+            .wrapper{height: 45vh;}
+        }
+        @media (max-width:600px){
+            .ls_logo_top{padding: 0px 15px;}
+            .ls_logo_top li{margin-right: 15px;}
+            .logo_tcki{width: 100px;}
+            .logo_dtac1{width: 40px;}
+            .logo_dtac2{width:55px;}
+            .tx_toallchinh{margin-top: 160px;}
+            .btn_tagmeud{width: 230px;height: 65px;font-size: 30px;}
+            .all_texchinhtg{margin-bottom: 140px;}
+            .texall_gco{font-size: 17px;flex-wrap: wrap;padding: 0px 15px;}
+            .texall_gco em{margin: 5px;}
+            .menu_foter_ud li{margin: 0px 5px;}
+            .menu_foter_ud li a{font-size: 12px;padding: 5px 10px;border-radius: 3px;}
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <ul class="ls_logo_top">
+        <li><a href=""><img class="logo_tcki" src="images/logo_tk.png" alt=""></a></li>
+        <li><a href=""><img class="logo_dtac1" src="images/logo_dt1.png" alt=""></a></li>
+        <li><a href=""><img class="logo_dtac2" src="images/logo_dt2.png" alt=""></a></li>
+    </ul>
+</header>
+<main>
+    <section class="ndung_taigame">
+        <div class="wrapper">
+            <div class="all_texchinhtg">
+                <div class="tx_toallchinh"><img src="images/img_textchinh.png" alt=""></div>
+                <a href="" class="btn_tagmeud">tải ngay</a>
+            </div>
+            <span class="texall_gco">Giftcode trải nghiệm:<em>sungvip</em>,<em>codevip888</em>,<em>codevip999</em>,<em>tkpcvtc</em></span>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="wrapper1">
+        <div class="all_logofoter">
+            <a class="" href=""><img src="https://truykichpc.vn/Assets/images/VTC20Logo.png" alt=""></a>
+            <a class="" href=""><img src="https://truykichpc.vn/Assets/images/Wizard20Game20Logo.png" alt=""></a>
+        </div>
+        <p class="txt_allfooter">
+            Copright 2023 VTC Mobile. All rights reserved.<br>
+            Công ty cổ phần VTC dịch vụ di động - Tầng 11 - Tòa nhà VTC Online, số 18 Tam Trinh phường Minh Khai, quận Hai Bà Trưng, Hà Nội<br>
+            SĐT: (84-4).39877470 Email: vtcmobile@vtc.vn<br>
+            Giấy phép phê duyệt nội dung kịch bản trò chơi điện tử trên mạng số 837/QĐ-BTTTT<br>
+            Người chịu trách nhiệm quản lý nội dung: Ông Nguyễn Viết Quang Minh<br>
+        </p>
+        <ul class="menu_foter_ud">
+            <li><a href="javascript:;" onclick="Ref_CSBM();" target="_blank">Chính sách bảo mật</a></li>
+            <li><a href="javascript:;" onclick="Ref_DKSD();" target="_blank">Điều khoản sử dụng (VTC)</a></li>
+        </ul>
+    </div>
+</footer>
+</html>
